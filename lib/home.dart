@@ -28,9 +28,15 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('TO DO'),
+        title: const Text(
+          'TO DO',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
         centerTitle: true,
-        backgroundColor: Colors.yellow,
+        backgroundColor: const Color(0xFF287aea),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

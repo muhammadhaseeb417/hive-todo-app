@@ -1,0 +1,11 @@
+flutter_native_splash:
+  color: "#287aea"
+  color_dark: "#287aea"
+  image: assets/tick.png
+  image_dark: assets/tick.png
+
+  android_12:
+    color: "#287aea"
+    color_dark: "#287aea"
+    image: assets/tick.png
+    image_dark: assets/tick.png
