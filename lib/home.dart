@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
@@ -11,15 +10,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  TextEditingController _textEditingController = TextEditingController();
+  final TextEditingController _textEditingController = TextEditingController();
   Box? _todoBox;
 
   @override
   void initState() {
     super.initState();
-    Hive.openBox("todo_box").then((_box) {
+    Hive.openBox("todo_box").then((box) {
       setState(() {
-        _todoBox = _box;
+        _todoBox = box;
       });
     });
   }
@@ -63,12 +62,12 @@ class _HomePageState extends State<HomePage> {
                   Map todo = _todoBox!.get(todoKeys[index]);
                   return Slidable(
                     endActionPane:
-                        ActionPane(motion: StretchMotion(), children: [
+                        ActionPane(motion: const StretchMotion(), children: [
                       SlidableAction(
                         onPressed: (context) {
                           _todoBox!.delete(todoKeys[index]);
                         },
-                        backgroundColor: Color(0xFFFE4A49),
+                        backgroundColor: const Color(0xFFFE4A49),
                         foregroundColor: Colors.white,
                         icon: Icons.delete,
                         label: 'Delete',
